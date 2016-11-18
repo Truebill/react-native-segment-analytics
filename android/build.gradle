@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.+'
+        classpath 'com.android.tools.build:gradle:2.2.2'
     }
 }
 
@@ -34,4 +34,5 @@ dependencies {
     compile 'com.facebook.react:react-native:+'
     compile "com.android.support:appcompat-v7:23.0.1"
     compile 'com.segment.analytics.android:analytics:4.+'
+    compile 'com.appsflyer:segment-android-integration:1.+'
 }
