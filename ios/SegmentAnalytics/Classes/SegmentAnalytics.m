@@ -6,7 +6,7 @@
 #import "RCTConvert.h"
 #import <Analytics/SEGAnalytics.h>
 #import <Foundation/Foundation.h>
-#import <segment-appsflyer-ios/SEGAppsFlyerIntegration.h>
+#import <segment-appsflyer-ios/SEGAppsFlyerIntegrationFactory.h>
 
 @implementation SegmentAnalytics
 
