@@ -6,6 +6,7 @@
 #import "RCTConvert.h"
 #import <Analytics/SEGAnalytics.h>
 #import <Foundation/Foundation.h>
+#import <segment-appsflyer-ios/SEGAppsFlyerIntegrationFactory.h>
 
 @implementation SegmentAnalytics
 
@@ -13,10 +14,14 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(setup:(NSString*)configKey) {
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:configKey];
+    SEGAppsFlyerIntegrationFactory *afFactory = [SEGAppsFlyerIntegrationFactory instance];
+
     configuration.flushAt = 1;
     configuration.recordScreenViews = YES;
     configuration.shouldUseLocationServices = true;
     configuration.trackApplicationLifecycleEvents = YES;
+
+    [configuration use:afFactory];
     [SEGAnalytics setupWithConfiguration:configuration];
 }
 

@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReadableType;
 import com.segment.analytics.Analytics;
 import com.segment.analytics.Properties;
 import com.segment.analytics.Traits;
+import com.segment.analytics.android.integrations.appsflyer.AppsflyerIntegration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class SegmentAnalyticsModule extends ReactContextBaseJavaModule {
     public void setup(String configKey) {
         try {
             Analytics analytics = new Analytics.Builder(this.getReactApplicationContext(), configKey)
+                    .use(AppsflyerIntegration.FACTORY)
                     .trackApplicationLifecycleEvents() // Enable this to record certain application events automatically!
                     .recordScreenViews() // Enable this to record screen views automatically!
                     .build();
