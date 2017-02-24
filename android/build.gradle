@@ -34,5 +34,6 @@ dependencies {
     compile 'com.facebook.react:react-native:+'
     compile "com.android.support:appcompat-v7:23.0.1"
     compile 'com.segment.analytics.android:analytics:4.+'
-    compile 'com.appsflyer:segment-android-integration:1.+'
+    // lock to version 1.5 since 1.6 and above uses sdk 25 while RN is still using sdk 23
+    compile 'com.appsflyer:segment-android-integration:1.5'
 }
